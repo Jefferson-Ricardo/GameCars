@@ -15,4 +15,11 @@ public class Carros : MonoBehaviour {
 	void FixedUpdate () {
 		rb.velocity = Vector2.down * Speed;
 	}
+
+	void OnTriggerEnter2D(Collider2D coll){
+		if (coll.name == "Main Camera") {
+			GameObject.Destroy (this.gameObject);
+		}
+	}
+
 }
